@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import "./index.css";
+
 function App() {
     return (
-        <div>
+        <div className="container">
             <Header></Header>
             <Menu></Menu>
             <Footer></Footer>
@@ -17,24 +19,47 @@ function Header() {
 
 function Menu() {
     return (
-        <div>
-            <h2>Menu Kita Bersama</h2>
+        <main className="menu">
+            <h2
+                style={{
+                    color: "red",
+                    fontSize: "50px",
+                    textTransform: "uppercase",
+                }}
+            >
+                Menu Kita Bersama
+            </h2>
             <Food />
             <Food />
             <Food />
-        </div>
+        </main>
     );
 }
 
 function Footer() {
-    return <footer>{new Date().getFullYear()} Warteg RYCS</footer>;
+    const hour = new Date().getHours();
+    const openHour = 10;
+    const closeHour = 22;
+
+    if (hour < openHour || hour > closeHour) {
+        alert("Closed");
+    } else {
+        alert("Open");
+    }
+
+    return (
+        <footer className="footer">
+            {new Date().getFullYear()} Warung Tegal Riyanda | Open at:{" "}
+            {openHour} - Close at: {closeHour}
+        </footer>
+    );
 }
 
 function Food() {
     return (
         <div>
             <img src="food/soto-betawi.jpg" width={100} height={70} />
-            <h2>Soto Betawi dari Jakarta</h2>
+            <h2>Soto Betawi</h2>
         </div>
     );
 }
