@@ -1,71 +1,71 @@
 const foodMenu = [
     {
-        nama: "Nasi Goreng",
-        deskripsi: "Nasi yang digoreng dengan bumbu rempah khas Indonesia",
-        harga: 25000,
-        foto: "food/nasi-goreng.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        name: "Nasi Goreng",
+        description: "Nasi yang digoreng dengan bumbu rempah khas Indonesia",
+        fare: 25000,
+        source: "food/nasi-goreng.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Sate Ayam",
-        deskripsi:
+        name: "Sate Ayam",
+        description:
             "Potongan daging ayam yang ditusuk dan dibakar, disajikan dengan bumbu kacang",
-        harga: 15000,
-        foto: "food/sate-ayam.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        fare: 15000,
+        source: "food/sate-ayam.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Gado-Gado",
-        deskripsi: "Sayuran segar dengan bumbu kacang khas Indonesia",
-        harga: 20000,
-        foto: "food/gado-gado.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        name: "Gado-Gado",
+        description: "Sayuran segar dengan bumbu kacang khas Indonesia",
+        fare: 20000,
+        source: "food/gado-gado.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Rendang",
-        deskripsi:
+        name: "Rendang",
+        description:
             "Daging yang dimasak dengan santan dan rempah-rempah khas Padang",
-        harga: 30000,
-        foto: "food/rendang.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        fare: 30000,
+        source: "food/rendang.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Soto Ayam",
-        deskripsi: "Sup ayam dengan kuah kuning dan berbagai rempah",
-        harga: 18000,
-        foto: "food/soto-ayam.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        name: "Soto Ayam",
+        description: "Sup ayam dengan kuah kuning dan berbagai rempah",
+        fare: 18000,
+        source: "food/soto-ayam.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Martabak",
-        deskripsi:
+        name: "Martabak",
+        description:
             "Makanan dadakan yang terbuat dari adonan tepung dengan berbagai isian",
-        harga: 20000,
-        foto: "food/martabak.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        fare: 20000,
+        source: "food/martabak.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Bakso",
-        deskripsi:
+        name: "Bakso",
+        description:
             "Bola daging yang direbus disajikan dengan mie dan kuah kaldu",
-        harga: 12000,
-        foto: "food/bakso.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        fare: 12000,
+        source: "food/bakso.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Soto Betawi",
-        deskripsi: "Sup daging dengan kuah santan kental khas Betawi",
-        harga: 22000,
-        foto: "food/soto-betawi.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        name: "Soto Betawi",
+        description: "Sup daging dengan kuah santan kental khas Betawi",
+        fare: 22000,
+        source: "food/soto-betawi.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
     {
-        nama: "Ayam Penyet",
-        deskripsi:
+        name: "Ayam Penyet",
+        description:
             "Ayam yang digeprek dengan bumbu rempah dan disajikan dengan sambal",
-        harga: 18000,
-        foto: "food/ayam-penyet.jpg",
-        stok: Math.random() >= 0.5 ? true : false,
+        fare: 18000,
+        source: "food/ayam-penyet.jpg",
+        stock: Math.random() >= 0.5 ? true : false,
     },
 ];
 
