@@ -29,9 +29,28 @@ function Menu() {
             >
                 Menu Kita Bersama
             </h2>
-            <Food />
-            <Food />
-            <Food />
+            <Food
+                name="Nasi Goreng"
+                description="Nasi yang digoreng dengan bumbu rempah khas Indonesia"
+                fare={25000}
+                source="food/nasi-goreng.jpg"
+                stock={Math.random() >= 0.5 ? true : false}
+            />
+            <Food
+                name="Rendang"
+                description="Rendang adalah hidangan berbahan dasar daging yang dihasilkan dari
+                proses memasak suhu rendah dalam waktu lama dengan menggunakan aneka rempah-rempah dan santan"
+                fare={20000}
+                source="food/rendang.jpg"
+                stock={Math.random() >= 0.5 ? true : false}
+            />
+            <Food
+                name="Sate Ayam"
+                description="Sate ayam adalah makanan khas Indonesia. Sate Ayam dibuat dari daging ayam."
+                fare={15000}
+                source="food/sate-ayam.jpg"
+                stock={Math.random() >= 0.5 ? true : false}
+            />
         </main>
     );
 }
@@ -55,11 +74,15 @@ function Footer() {
     );
 }
 
-function Food() {
+function Food(props) {
     return (
-        <div>
-            <img src="food/soto-betawi.jpg" width={100} height={70} />
-            <h2>Soto Betawi</h2>
+        <div className="food">
+            <img src={props.source} alt={props.name} width={100} height={70} />
+            <div>
+                <h3>{props.name}</h3>
+                <p>{props.description}</p>
+                <span>{props.fare}</span>
+            </div>
         </div>
     );
 }
