@@ -20,6 +20,7 @@ function Header() {
 
 function Menu() {
     const food = data;
+    // const food = [];
     const numOfFoods = food.length;
     return (
         <main className="menu">
@@ -33,11 +34,18 @@ function Menu() {
                 Menu Kita Bersama
             </h2>
             {numOfFoods > 0 ? (
-                <ul className="foods">
-                    {data.map((food) => (
-                        <Food foodObj={food} key={food.name} />
-                    ))}
-                </ul>
+                <>
+                    <p>
+                        Aneka makanan Indonesia yang disajikan oleh Warteg RYCS
+                        sebagai pemenuhan makanan kesehatan yang diperlukan
+                        dalam kehidupan sehari-hari
+                    </p>
+                    <ul className="foods">
+                        {data.map((food) => (
+                            <Food foodObj={food} key={food.name} />
+                        ))}
+                    </ul>
+                </>
             ) : (
                 <p>Kosong, bro. Besok datang lagi</p>
             )}
