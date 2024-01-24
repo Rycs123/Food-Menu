@@ -19,6 +19,8 @@ function Header() {
 }
 
 function Menu() {
+    const food = data;
+    const numOfFoods = food.length;
     return (
         <main className="menu">
             <h2
@@ -30,33 +32,15 @@ function Menu() {
             >
                 Menu Kita Bersama
             </h2>
-            <ul className="foods">
-                {data.map((food) => (
-                    <Food foodObj={food} />
-                ))}
-            </ul>
-            {/* <Food
-                name="Nasi Goreng"
-                description="Nasi yang digoreng dengan bumbu rempah khas Indonesia"
-                fare={25000}
-                source="food/nasi-goreng.jpg"
-                stock={Math.random() >= 0.5 ? true : false}
-            />
-            <Food
-                name="Rendang"
-                description="Rendang adalah hidangan berbahan dasar daging yang dihasilkan dari
-                proses memasak suhu rendah dalam waktu lama dengan menggunakan aneka rempah-rempah dan santan"
-                fare={20000}
-                source="food/rendang.jpg"
-                stock={Math.random() >= 0.5 ? true : false}
-            />
-            <Food
-                name="Sate Ayam"
-                description="Sate ayam adalah makanan khas Indonesia. Sate Ayam dibuat dari daging ayam."
-                fare={15000}
-                source="food/sate-ayam.jpg"
-                stock={Math.random() >= 0.5 ? true : false}
-            /> */}
+            {numOfFoods > 0 ? (
+                <ul className="foods">
+                    {data.map((food) => (
+                        <Food foodObj={food} key={food.name} />
+                    ))}
+                </ul>
+            ) : (
+                <p>Kosong, bro. Besok datang lagi</p>
+            )}
         </main>
     );
 }
@@ -65,24 +49,41 @@ function Footer() {
     const hour = new Date().getHours();
     const openHour = 10;
     const closeHour = 22;
+    const isOpen = hour >= openHour && hour <= closeHour;
 
-    if (hour < openHour || hour > closeHour) {
-        alert("Closed");
+    if (isOpen) {
+        return <OpenStore openHour={openHour} closeHour={closeHour} />;
     } else {
-        alert("Open");
+        return <CloseStore openHour={openHour} closeHour={closeHour} />;
     }
+}
 
+function CloseStore(props) {
+    return (
+        <p>
+            Maaf bro masih tutup. Warteg buka sekitar jam {props.openHour} -{" "}
+            {props.closeHour}.
+        </p>
+    );
+}
+
+function OpenStore(props) {
     return (
         <footer className="footer">
-            {new Date().getFullYear()} Warung Tegal Riyanda | Open at:{" "}
-            {openHour} - Close at: {closeHour}
+            <div className="order">
+                <p>
+                    {new Date().getFullYear()} Warung Tegal Riyanda | Open at:{" "}
+                    {props.openHour} - Close at: {props.closeHour}
+                </p>
+                <button className="btn">Order</button>
+            </div>
         </footer>
     );
 }
 
 function Food(props) {
     return (
-        <div className="food">
+        <li className="food">
             <img
                 src={props.foodObj.source}
                 alt={props.foodObj.name}
@@ -94,7 +95,7 @@ function Food(props) {
                 <p>{props.foodObj.description}</p>
                 <span>{props.foodObj.fare}</span>
             </div>
-        </div>
+        </li>
     );
 }
 
