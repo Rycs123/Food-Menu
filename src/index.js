@@ -92,14 +92,12 @@ function OpenStore({ openHours, closeHours }) {
 function Food(props) {
     const { name, description, fare, source, stock } = props.foodObj;
     return (
-        <li className="food">
+        <li className={`food ${!stock ? "sold-out" : ""}`}>
             <img src={source} alt={name} width={100} height={70} />
             <div>
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <span>
-                    {fare} - {stock}
-                </span>
+                <span>{stock ? fare : "Sold Out"}</span>
             </div>
         </li>
     );
