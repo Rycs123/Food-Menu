@@ -52,28 +52,28 @@ function Footer() {
     const isOpen = hour >= openHour && hour <= closeHour;
 
     if (isOpen) {
-        return <OpenStore openHour={openHour} closeHour={closeHour} />;
+        return <OpenStore openHours={openHour} closeHours={closeHour} />;
     } else {
-        return <CloseStore openHour={openHour} closeHour={closeHour} />;
+        return <CloseStore openHours={openHour} closeHours={closeHour} />;
     }
 }
 
-function CloseStore(props) {
+function CloseStore({ openHours, closeHours }) {
     return (
         <p>
-            Maaf bro masih tutup. Warteg buka sekitar jam {props.openHour} -{" "}
-            {props.closeHour}.
+            Maaf bro masih tutup. Warteg buka sekitar jam {openHours} -{" "}
+            {closeHours}.
         </p>
     );
 }
 
-function OpenStore(props) {
+function OpenStore({ openHours, closeHours }) {
     return (
         <footer className="footer">
             <div className="order">
                 <p>
                     {new Date().getFullYear()} Warung Tegal Riyanda | Open at:{" "}
-                    {props.openHour} - Close at: {props.closeHour}
+                    {openHours} - Close at: {closeHours}
                 </p>
                 <button className="btn">Order</button>
             </div>
@@ -82,18 +82,16 @@ function OpenStore(props) {
 }
 
 function Food(props) {
+    const { name, description, fare, source, stock } = props.foodObj;
     return (
         <li className="food">
-            <img
-                src={props.foodObj.source}
-                alt={props.foodObj.name}
-                width={100}
-                height={70}
-            />
+            <img src={source} alt={name} width={100} height={70} />
             <div>
-                <h3>{props.foodObj.name}</h3>
-                <p>{props.foodObj.description}</p>
-                <span>{props.foodObj.fare}</span>
+                <h3>{name}</h3>
+                <p>{description}</p>
+                <span>
+                    {fare} - {stock}
+                </span>
             </div>
         </li>
     );
